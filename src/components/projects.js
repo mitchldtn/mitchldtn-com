@@ -24,7 +24,7 @@ const Projects = () => {
     react, scala, redis, typescript, python, nodejs, reactNative, ionic,
     postgres, golang, mongodb, k8s, gcloud, aws, heroku, graphql}) => {
       return <div className="my-5 bg-blackish h-full rounded-lg">
-        <div className="p-5 w-full h-full">
+        <div className="md:p-5 w-full h-full">
           <ProjectTextInput
             text="project"
             input={title} />

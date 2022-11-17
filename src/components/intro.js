@@ -2,8 +2,9 @@ import { Link } from "react-router-dom"
 
 const Intro = () => {
   const IntroHeader = () => {
-    return <div className="text-4xl leading-relaxed">Maker, builder <span className="text-redish" >and</span>
-      <br /> everything <span className="text-redish" >in</span> between.
+    return <div className="md:flex flex-col text-4xl leading-relaxed">
+     <span>Maker, builder <span className="text-redish">and</span></span>
+     <span> everything <span className="text-redish">in</span> between.</span>
     </div>
   }
 
