@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Intro = () => {
   const IntroHeader = () => {
     return <div className="text-4xl leading-relaxed">Maker, builder <span className="text-redish" >and</span>
@@ -15,10 +17,10 @@ const Intro = () => {
         just to name a few. I'm striving to make my own path in life with a
         big focus on awareness, growth, work/life balance, physical and mental health.
         Find out more about me{" "}
-          <a className="hover:text-redish cursor-pointer underline text-gray-300"
-            href="/about">
+          <Link className="hover:text-redish cursor-pointer underline"
+            to="/about">
             here
-          </a>
+          </Link>
         {"."}
       </span>
     </div>
