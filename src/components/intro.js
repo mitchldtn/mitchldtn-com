@@ -27,11 +27,11 @@ const Intro = () => {
   const IntroTextWithImage = () => {
     return <div className="flex flex-col md:flex-row justify-between">
       <IntroText />
-      <div className="items-center p-10 w-72 h-full">
+      <div className="self-center items-center p-10 w-72 h-full">
         <img
           src="/adsf74725sdr234.png"
           alt="Shadow (Right) & Mitch (Left)"
-          className="grayscale rounded md:p-0 items-center w-full h-full"
+          className="grayscale rounded w-full h-full"
           width="200"
           height="200"/>
       </div>
