@@ -25,30 +25,39 @@ const Projects = () => {
     postgres, golang, mongodb, k8s, gcloud, aws, heroku, graphql}) => {
       return <div className="my-5 bg-blackish h-full rounded-lg">
         <div className="p-5 w-full h-full">
-          <ProjectTextInput text="project" input={title} />
-          <ProjectTextInput text="description" input={description} />
-          <ProjectTextInput text="platform" input={platform} />
-          <ProjectTextInput text="stack" input={<div className="flex-wrap flex">
-            {scala && <ProjectLangLogo Logo={SiScala} logoText="Scala" />}
-            {typescript && <ProjectLangLogo Logo={SiTypescript} logoText="TypeScript" />}
-            {react && <ProjectLangLogo Logo={SiReact} logoText="React" />}
-            {reactNative && <ProjectLangLogo Logo={SiReact} logoText="React Native" />}
-            {redis && <ProjectLangLogo Logo={SiRedis} logoText="redis" />}
-            {python && <ProjectLangLogo Logo={SiPython} logoText="python" />}
-            {nodejs && <ProjectLangLogo Logo={SiNodedotjs} logoText="Nodejs" />}
-            {ionic && <ProjectLangLogo Logo={SiIonic} logoText="ionic" />}
-            {postgres && <ProjectLangLogo Logo={SiPostgresql} logoText="PostgreSQL" />}
-            {golang && <ProjectLangLogo Logo={SiGo} logoText="Go" />}
-            {mongodb && <ProjectLangLogo Logo={SiMongodb} logoText="MongoDB" />}
-            {graphql && <ProjectLangLogo Logo={SiGraphql} logoText="GraphQL" />}
-            {k8s && <ProjectLangLogo Logo={SiKubernetes} logoText="kubernetes" />}
-            {gcloud && <ProjectLangLogo Logo={SiGooglecloud} logoText="GCP" />}
-            {aws && <ProjectLangLogo Logo={SiAmazonaws} logoText="AWS" />}
-            {heroku && <ProjectLangLogo Logo={SiHeroku} logoText="heroku" />}
-          </div>} />
-
-        </div>
+          <ProjectTextInput
+            text="project"
+            input={title} />
+          <ProjectTextInput
+            text="description"
+            input={description} />
+          <ProjectTextInput
+            text="platform"
+            input={platform} />
+          <ProjectTextInput
+            text="stack"
+            input={
+              <div className="flex-wrap flex">
+                {scala && <ProjectLangLogo Logo={SiScala} logoText="Scala" />}
+                {typescript && <ProjectLangLogo Logo={SiTypescript} logoText="TypeScript" />}
+                {react && <ProjectLangLogo Logo={SiReact} logoText="React" />}
+                {reactNative && <ProjectLangLogo Logo={SiReact} logoText="React Native" />}
+                {redis && <ProjectLangLogo Logo={SiRedis} logoText="redis" />}
+                {python && <ProjectLangLogo Logo={SiPython} logoText="python" />}
+                {nodejs && <ProjectLangLogo Logo={SiNodedotjs} logoText="Nodejs" />}
+                {ionic && <ProjectLangLogo Logo={SiIonic} logoText="ionic" />}
+                {postgres && <ProjectLangLogo Logo={SiPostgresql} logoText="PostgreSQL" />}
+                {golang && <ProjectLangLogo Logo={SiGo} logoText="Go" />}
+                {mongodb && <ProjectLangLogo Logo={SiMongodb} logoText="MongoDB" />}
+                {graphql && <ProjectLangLogo Logo={SiGraphql} logoText="GraphQL" />}
+                {k8s && <ProjectLangLogo Logo={SiKubernetes} logoText="kubernetes" />}
+                {gcloud && <ProjectLangLogo Logo={SiGooglecloud} logoText="GCP" />}
+                {aws && <ProjectLangLogo Logo={SiAmazonaws} logoText="AWS" />}
+                {heroku && <ProjectLangLogo Logo={SiHeroku} logoText="heroku" />}
+              </div>
+            } />
       </div>
+    </div>
   }
 
   return <div className="px-2 md:px-0 mt-10">
@@ -63,19 +72,7 @@ const Projects = () => {
       redis={true}
       ionic={true}
       postgres={true}
-      heroku={true}
-      />
-    <Project
-      title="blubrd"
-      description="cross platform social mobile app"
-      platform="mobile"
-      redis={true}
-      nodejs={true}
-      graphql={true}
-      reactNative={true}
-      mongodb={true}
-      aws={true}
-      />
+      heroku={true}/>
     <Project
       title="metistack"
       description="no code solution that deploys personalized GraphQL API's for the customer on a k8s cluster using CI/CD"
@@ -87,8 +84,17 @@ const Projects = () => {
       mongodb={true}
       k8s={true}
       gcloud={true}
+      graphql={true}/>
+    <Project
+      title="blubrd"
+      description="cross platform social mobile app"
+      platform="mobile"
+      redis={true}
+      nodejs={true}
       graphql={true}
-      />
+      reactNative={true}
+      mongodb={true}
+      aws={true}/>
   </div>
 }
 
