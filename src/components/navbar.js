@@ -37,7 +37,7 @@ const Navbar = () => {
         backgroundColor: isScrolling ? "black" : "transparent",
       }}
       background={isScrolling ? "black" : "transparent"}
-      className={`text-white sticky top-0 w-full mt-5 px-5 md:px-0`}
+      className={`text-white sticky top-0 w-full mt-5 px-5`}
     >
       <div className="md:max-w-6xl mx-auto w-full flex items-center justify-between p-3.5">
         <Link to="/" className="w-40 ">

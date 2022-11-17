@@ -9,7 +9,7 @@ const Intro = () => {
   }
 
   const IntroText = () => {
-    return <div className="mt-20 w-full md:w-3/5">
+    return <div className="mt-20 w-full sm:w-3/5">
       <span className="w-full h-full items-center mb-10">
         I'm a Software Engineer from Turks & Caicos Islands and I'm currently
         living in Texas. I write a lot of code for work and fun with a primary focus on pure functional programming.
@@ -33,7 +33,7 @@ const Intro = () => {
       <div className="self-center items-center p-10 w-72 h-full">
         <img
           src="/adsf74725sdr234.png"
-          alt="Shadow (Right) & Mitch (Left)"
+          alt="shadow (right) & mitch (left)"
           className="grayscale rounded w-full h-full"
           width="200"
           height="200"/>
@@ -42,7 +42,7 @@ const Intro = () => {
   }
 
   return (
-    <div className="mt-20 px-4 md:px-0">
+    <div className="mt-20 px-4">
       <IntroHeader />
       <IntroTextWithImage />
     </div>

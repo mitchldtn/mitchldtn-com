@@ -24,7 +24,7 @@ const Projects = () => {
     react, scala, redis, typescript, python, nodejs, reactNative, ionic,
     postgres, golang, mongodb, k8s, gcloud, aws, heroku, graphql}) => {
       return <div className="my-5 bg-blackish h-full rounded-lg">
-        <div className="md:p-5 w-full h-full">
+        <div className="p-2 w-full h-full">
           <ProjectTextInput
             text="project"
             input={title} />
@@ -60,7 +60,7 @@ const Projects = () => {
     </div>
   }
 
-  return <div className="px-2 md:px-0 mt-10">
+  return <div className="px-2 mt-10">
     <span className="text-4xl">Projects</span>
     <Project
       title="carrot"
