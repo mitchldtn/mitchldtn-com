@@ -1,7 +1,7 @@
 import {
   SiReact, SiScala, SiRedis, SiTypescript, SiPython, SiNodedotjs,
   SiIonic, SiPostgresql, SiGo, SiMongodb, SiKubernetes, SiGooglecloud,
-  SiAmazonaws, SiHeroku, SiGraphql
+  SiAmazonaws, SiHeroku, SiGraphql, SiDocker
 } from "react-icons/si"
 
 const Projects = () => {
@@ -22,7 +22,7 @@ const Projects = () => {
   const Project = ({
     title, description, platform,
     react, scala, redis, typescript, python, nodejs, reactNative, ionic,
-    postgres, golang, mongodb, k8s, gcloud, aws, heroku, graphql}) => {
+    postgres, golang, mongodb, k8s, gcloud, aws, heroku, graphql, docker}) => {
       return <div className="my-5 bg-blackish h-full rounded-lg">
         <div className="p-2 w-full h-full">
           <ProjectTextInput
@@ -50,6 +50,7 @@ const Projects = () => {
                 {golang && <ProjectLangLogo Logo={SiGo} logoText="Go" />}
                 {mongodb && <ProjectLangLogo Logo={SiMongodb} logoText="MongoDB" />}
                 {graphql && <ProjectLangLogo Logo={SiGraphql} logoText="GraphQL" />}
+                {docker && <ProjectLangLogo Logo={SiDocker} logoText="docker" />}
                 {k8s && <ProjectLangLogo Logo={SiKubernetes} logoText="kubernetes" />}
                 {gcloud && <ProjectLangLogo Logo={SiGooglecloud} logoText="GCP" />}
                 {aws && <ProjectLangLogo Logo={SiAmazonaws} logoText="AWS" />}
@@ -83,6 +84,7 @@ const Projects = () => {
       react={true}
       mongodb={true}
       k8s={true}
+      docker={true}
       gcloud={true}
       graphql={true}/>
     <Project
@@ -94,6 +96,8 @@ const Projects = () => {
       graphql={true}
       reactNative={true}
       mongodb={true}
+      docker={true}
+      k8s={true}
       aws={true}/>
   </div>
 }
