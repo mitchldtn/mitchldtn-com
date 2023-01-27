@@ -43,9 +43,10 @@ export default function About() {
                 ingress-nginx and so much more. I love to automate things and
                 DevOps has always interested me.
                 <br /> <br />
-                A recent project I'm working on has me using multiple socket.io servers
-                and I'm using redis Pub/Sub so the message is broadcasted to every server.
-                I really enjoy building with scalability in mind.
+                Most recently I'm working on an e-commerce, order fulfillment, rewards and
+                customer support platform. We are using pure functional programming in Scala
+                for the backend, ScalaJS for our customers frontend and TypeScript/React for
+                their customers frontend.
               </>}
           />
           <Input
