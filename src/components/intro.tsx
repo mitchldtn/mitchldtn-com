@@ -11,12 +11,12 @@ const Intro = () => {
   const IntroText = () => {
     return <div className="mt-20 w-full sm:w-3/5">
       <span className="w-full h-full items-center mb-10">
-        I'm a Software Engineer from Turks & Caicos Islands and I'm currently
-        living in Texas. I write a lot of code for work and fun with a primary focus on pure functional programming.
-        I love automation. I also love my dog, building stuff,
-        a nice whisky, learning new things and exploring the great outdoors,
-        just to name a few. I'm striving to make my own path in life with a
-        big focus on awareness, growth, work/life balance, physical and mental health.
+        I'm a Software Engineer from Turks & Caicos Islands; currently living in Texas where I'm developing my skills
+        in functional programming and finding innovative ways to automate processes. Outside of work, I love
+        keeping my dog entertained, taking on DIY projects, playing outdoor basketball, appreciating a fine whisky,
+        seeking out new knowledge and embracing the beauty of nature. I'm charting my own path in life where I
+        constantly focus on developing self-awareness, pushing for growth, designing for work-life harmony,
+        and prioritizing physical and mental well-being.
         Find out more about me{" "}
           <Link className="hover:text-redish cursor-pointer underline"
             to="/about">
