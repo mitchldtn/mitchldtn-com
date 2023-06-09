@@ -20,81 +20,96 @@ const Projects = () => {
   }
 
   interface ProjectTextInputProps {
-    text: string,
+    text: string
     input: React.ReactNode
   }
 
   const ProjectTextInput: React.FC<ProjectTextInputProps> = ({text, input}) => {
     return <>
-      <div className="pt-5 pl-5 pb-2 opacity-50">{text}</div>
-      <div className="ml-5">{input}</div>
+      <div className="pt-4 pl-5 pb-2 opacity-50">{text}</div>
+      <div className="ml-5 mb-2">{input}</div>
     </>
   }
 
   interface ProjectProps {
-    title: string,
-    description: string,
-    platform: string,
-    react?: boolean,
-    scala?: boolean,
-    redis?: boolean,
-    typescript?: boolean,
-    python?: boolean,
-    nodejs?: boolean,
-    reactNative?: boolean,
-    ionic?: boolean,
-    postgres?: boolean,
-    golang?: boolean,
-    mongodb?: boolean,
-    k8s?: boolean,
-    gcloud?: boolean,
-    aws?: boolean,
-    heroku?: boolean,
-    graphql?: boolean,
-    docker?: boolean,
+    title: string
+    description: string
+    platform: string
+    current?: boolean
+    react?: boolean
+    scala?: boolean
+    redis?: boolean
+    typescript?: boolean
+    python?: boolean
+    nodejs?: boolean
+    reactNative?: boolean
+    ionic?: boolean
+    postgres?: boolean
+    golang?: boolean
+    mongodb?: boolean
+    k8s?: boolean
+    gcloud?: boolean
+    aws?: boolean
+    heroku?: boolean
+    graphql?: boolean
+    docker?: boolean
   }
 
   const Project: React.FC<ProjectProps> = props => {
-      return <div className="my-5 bg-blackish h-full rounded-lg">
-        <div className="p-2 w-full h-full">
-          <ProjectTextInput
-            text="project"
-            input={props.title} />
-          <ProjectTextInput
-            text="description"
-            input={props.description} />
-          <ProjectTextInput
-            text="platform"
-            input={props.platform} />
-          <ProjectTextInput
-            text="stack"
-            input={
-              <div className="flex-wrap flex">
-                {props.scala && <ProjectLangLogo Logo={SiScala} logoText="Scala" />}
-                {props.typescript && <ProjectLangLogo Logo={SiTypescript} logoText="TypeScript" />}
-                {props.react && <ProjectLangLogo Logo={SiReact} logoText="React" />}
-                {props.reactNative && <ProjectLangLogo Logo={SiReact} logoText="React Native" />}
-                {props.redis && <ProjectLangLogo Logo={SiRedis} logoText="redis" />}
-                {props.python && <ProjectLangLogo Logo={SiPython} logoText="python" />}
-                {props.nodejs && <ProjectLangLogo Logo={SiNodedotjs} logoText="Nodejs" />}
-                {props.ionic && <ProjectLangLogo Logo={SiIonic} logoText="ionic" />}
-                {props.postgres && <ProjectLangLogo Logo={SiPostgresql} logoText="PostgreSQL" />}
-                {props.golang && <ProjectLangLogo Logo={SiGo} logoText="Go" />}
-                {props.mongodb && <ProjectLangLogo Logo={SiMongodb} logoText="MongoDB" />}
-                {props.graphql && <ProjectLangLogo Logo={SiGraphql} logoText="GraphQL" />}
-                {props.docker && <ProjectLangLogo Logo={SiDocker} logoText="docker" />}
-                {props.k8s && <ProjectLangLogo Logo={SiKubernetes} logoText="kubernetes" />}
-                {props.gcloud && <ProjectLangLogo Logo={SiGooglecloud} logoText="GCP" />}
-                {props.aws && <ProjectLangLogo Logo={SiAmazonaws} logoText="AWS" />}
-                {props.heroku && <ProjectLangLogo Logo={SiHeroku} logoText="heroku" />}
-              </div>
-            } />
-      </div>
+    return <div className={`my-5 ${props.current && "border-2 border-greyish"} bg-blackish h-full rounded-lg`}>
+      <div className="p-2 w-full h-full">
+        <ProjectTextInput
+          text="project"
+          input={props.title} />
+        <ProjectTextInput
+          text="description"
+          input={props.description} />
+        <ProjectTextInput
+          text="platform"
+          input={props.platform} />
+        <ProjectTextInput
+          text="stack"
+          input={
+            <div className="flex-wrap flex">
+              {props.scala && <ProjectLangLogo Logo={SiScala} logoText="Scala" />}
+              {props.typescript && <ProjectLangLogo Logo={SiTypescript} logoText="TypeScript" />}
+              {props.react && <ProjectLangLogo Logo={SiReact} logoText="React" />}
+              {props.reactNative && <ProjectLangLogo Logo={SiReact} logoText="React Native" />}
+              {props.redis && <ProjectLangLogo Logo={SiRedis} logoText="redis" />}
+              {props.python && <ProjectLangLogo Logo={SiPython} logoText="python" />}
+              {props.nodejs && <ProjectLangLogo Logo={SiNodedotjs} logoText="Nodejs" />}
+              {props.ionic && <ProjectLangLogo Logo={SiIonic} logoText="ionic" />}
+              {props.postgres && <ProjectLangLogo Logo={SiPostgresql} logoText="PostgreSQL" />}
+              {props.golang && <ProjectLangLogo Logo={SiGo} logoText="Go" />}
+              {props.mongodb && <ProjectLangLogo Logo={SiMongodb} logoText="MongoDB" />}
+              {props.graphql && <ProjectLangLogo Logo={SiGraphql} logoText="GraphQL" />}
+              {props.docker && <ProjectLangLogo Logo={SiDocker} logoText="docker" />}
+              {props.k8s && <ProjectLangLogo Logo={SiKubernetes} logoText="kubernetes" />}
+              {props.gcloud && <ProjectLangLogo Logo={SiGooglecloud} logoText="GCP" />}
+              {props.aws && <ProjectLangLogo Logo={SiAmazonaws} logoText="AWS" />}
+              {props.heroku && <ProjectLangLogo Logo={SiHeroku} logoText="heroku" />}
+            </div>
+          } />
     </div>
+  </div>
   }
 
   return <div className="px-2 mt-10">
     <span className="text-4xl">Projects</span>
+    <Project
+      title="chatmeter"
+      description="All-in-one listings, reputation, social, analytics and CX solutions built to propel strategic brand growth and life-long customer loyalty"
+      platform="mobile/web"
+      current={true}
+      scala={true}
+      react={true}
+      typescript={true}
+      nodejs={true}
+      k8s={true}
+      mongodb={true}
+      reactNative={true}
+      redis={true}
+      aws={true}/>
     <Project
       title="carrot"
       description="ecommerce, order fulfillment, rewards and customer support platform"

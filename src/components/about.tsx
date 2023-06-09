@@ -68,7 +68,7 @@ export default function About() {
               <>
                 I was born on an island called Providenciales, AKA Provo, in Turks & Caicos Islands.
                 I moved to Quebec, Canada around the age of 9, learned French and at 17 I was
-                living on my own in Montreal working and finishing my education.
+                living on my own in Montreal working and continuing my education.
                 I lived there until my mid 20s before moving back to the islands
                 where I had been living up until 2020 when I moved to Texas.
               </>}

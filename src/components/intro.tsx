@@ -12,8 +12,8 @@ const Intro = () => {
     return <div className="mt-20 w-full sm:w-3/5">
       <span className="w-full h-full items-center mb-10">
         I'm a Software Engineer from Turks & Caicos Islands; currently living in Texas where I'm developing my skills
-        in functional programming and finding innovative ways to automate processes. Outside of work, I love
-        keeping my dog entertained, taking on DIY projects, playing outdoor basketball, appreciating a fine whisky,
+        in software development and finding innovative ways, including AI, to automate processes. Outside of work, I
+        love keeping my dog entertained, taking on DIY projects, playing outdoor basketball, appreciating a fine whisky,
         seeking out new knowledge and embracing the beauty of nature. I'm charting my own path in life where I
         constantly focus on developing self-awareness, pushing for growth, designing for work-life harmony,
         and prioritizing physical and mental well-being.
