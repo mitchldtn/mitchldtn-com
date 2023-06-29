@@ -98,7 +98,7 @@ const Projects = () => {
     <span className="text-4xl">Projects</span>
     <Project
       title="chatmeter"
-      description="All-in-one listings, reputation, social, analytics and CX solutions"
+      description="platform leveraging AI for multi-location brand management, including listings, reviews, social media, and CX solutions"
       platform="mobile/web"
       current={true}
       scala={true}
