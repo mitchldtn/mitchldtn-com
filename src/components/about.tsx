@@ -59,17 +59,16 @@ export default function About() {
             input={
               <>
                 My love for building started off with legos as a child, evolved into building with
-                code around 12 and has progressed to building with hardware and wood now.
+                code around 12 and has progressed to building with hardware and wood as well now.
                 <br /> <br />
                 As a teenager, I was running an online text based multiplayer game with an average
                 of 15-30 daily users. It was coded in Visual Basics 6 and that is when I fell in love
-                with the endless possibilities coding offers. I lived out in the boonies when the internet
-                came out and it gave me a way to connect with my friends that lived far away.
+                with the endless possibilities coding offers.
                 <br /> <br />
-                Lately, I've dabbled in building a dashcam using a raspberry pi, a telephoto lens and
-                a TPU to run a MLM; but my pride and joy is my kitchen island. It has my coffee station
+                Lately, I've dabbled in building a dash cam using a raspberry pi, a telephoto lens and
+                a TPU to run a MLM; but my pride and joy is my kitchen island. It holds my coffee station
                 and also serves as a big(and tall) cutting board. I'm tall, I like to cook, I don't like back
-                pain and kitchen counters in Texas seem to be low for me; so I made it taller :)
+                pain and kitchen counters in Texas seem to be low for me; so I made it tall :)
               </>}
           />
           <Input
