@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconType } from 'react-icons'
-import { FaLinkedin, FaGithub, FaGoodreads } from "react-icons/fa"
+import { FaLinkedin, FaGithub, FaGoodreads, FaInstagram } from "react-icons/fa"
 
 const Footer = () => {
 
@@ -40,6 +40,10 @@ const Footer = () => {
           <span>© {new Date().getFullYear()} mitch ludington</span>
         </div>
         <div className="flex mt-5 items-center md:mt-0 flex-col md:flex-row">
+          <OutsideLink
+            link="https://instagram.com/mitchldtn/"
+            linkTitle="instagram"
+            LinkLogo={FaInstagram} />
           <OutsideLink
             link="https://linkedin.com/in/mitchldtn/"
             linkTitle="linkedin"

@@ -72,7 +72,7 @@ const Projects = () => {
         <ProjectTextInput
           text="stack"
           input={
-            <div className="flex-wrap flex gap-y-2">
+            <div className="flex-wrap flex md:gap-y-3">
               {props.scala && <ProjectLangLogo Logo={SiScala} logoText="Scala" />}
               {props.typescript && <ProjectLangLogo Logo={SiTypescript} logoText="TypeScript" />}
               {props.react && <ProjectLangLogo Logo={SiReact} logoText="React" />}
