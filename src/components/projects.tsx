@@ -3,8 +3,9 @@ import { IconType } from 'react-icons'
 import {
   SiReact, SiScala, SiRedis, SiTypescript, SiPython, SiNodedotjs,
   SiIonic, SiPostgresql, SiGo, SiMongodb, SiKubernetes, SiGooglecloud,
-  SiAmazonaws, SiHeroku, SiGraphql, SiDocker
+  SiHeroku, SiGraphql, SiDocker, SiOpenai,
 } from "react-icons/si"
+import { FaAws } from 'react-icons/fa'
 
 const Projects = () => {
 
@@ -53,13 +54,14 @@ const Projects = () => {
     heroku?: boolean
     graphql?: boolean
     docker?: boolean
+    openai?: boolean
   }
 
-  const Project: React.FC<ProjectProps> = props => {
+  const Company: React.FC<ProjectProps> = props => {
     return <div className={`my-5 ${props.current && "border-2 border-greyish"} bg-blackish h-full rounded-lg`}>
       <div className="p-2 w-full h-full">
         <ProjectTextInput
-          text="project"
+          text={`${props.current ? "current" : ""} company`}
           input={props.title} />
         <ProjectTextInput
           text="description"
@@ -70,10 +72,11 @@ const Projects = () => {
         <ProjectTextInput
           text="stack"
           input={
-            <div className="flex-wrap flex">
+            <div className="flex-wrap flex gap-y-2">
               {props.scala && <ProjectLangLogo Logo={SiScala} logoText="Scala" />}
               {props.typescript && <ProjectLangLogo Logo={SiTypescript} logoText="TypeScript" />}
               {props.react && <ProjectLangLogo Logo={SiReact} logoText="React" />}
+              {props.openai && <ProjectLangLogo Logo={SiOpenai} logoText="OpenAI" />}
               {props.reactNative && <ProjectLangLogo Logo={SiReact} logoText="React Native" />}
               {props.redis && <ProjectLangLogo Logo={SiRedis} logoText="redis" />}
               {props.python && <ProjectLangLogo Logo={SiPython} logoText="python" />}
@@ -86,7 +89,7 @@ const Projects = () => {
               {props.docker && <ProjectLangLogo Logo={SiDocker} logoText="docker" />}
               {props.k8s && <ProjectLangLogo Logo={SiKubernetes} logoText="kubernetes" />}
               {props.gcloud && <ProjectLangLogo Logo={SiGooglecloud} logoText="GCP" />}
-              {props.aws && <ProjectLangLogo Logo={SiAmazonaws} logoText="AWS" />}
+              {props.aws && <ProjectLangLogo Logo={FaAws} logoText="AWS" />}
               {props.heroku && <ProjectLangLogo Logo={SiHeroku} logoText="heroku" />}
             </div>
           } />
@@ -94,59 +97,38 @@ const Projects = () => {
   </div>
   }
 
-  return <div className="px-2 mt-10">
-    <span className="text-4xl">Projects</span>
-    <Project
-      title="chatmeter"
-      description="platform leveraging AI for multi-location brand management, including listings, reviews, social media, and CX solutions"
-      platform="mobile/web"
-      current={true}
-      scala={true}
-      react={true}
-      typescript={true}
-      nodejs={true}
-      k8s={true}
-      mongodb={true}
-      reactNative={true}
-      redis={true}
-      aws={true}/>
-    <Project
-      title="carrot"
-      description="ecommerce, order fulfillment, rewards and customer support platform"
-      platform="mobile/web"
-      scala={true}
-      react={true}
-      typescript={true}
-      redis={true}
-      ionic={true}
-      postgres={true}
-      heroku={true}/>
-    <Project
-      title="metistack"
-      description="no code solution that deploys personalized GraphQL API's for the customer on a k8s cluster using CI/CD"
-      platform="web"
-      redis={true}
-      golang={true}
-      nodejs={true}
-      react={true}
-      mongodb={true}
-      k8s={true}
-      docker={true}
-      gcloud={true}
-      graphql={true}/>
-    <Project
-      title="blubrd"
-      description="cross platform social mobile app"
-      platform="mobile"
-      redis={true}
-      nodejs={true}
-      graphql={true}
-      reactNative={true}
-      mongodb={true}
-      docker={true}
-      k8s={true}
-      aws={true}/>
-  </div>
+  return <>
+    <div className="px-2 mt-10">
+      <span className="text-4xl">Recent Professional Experience</span>
+      <Company
+        title="chatmeter"
+        description="AI-driven platform for managing and optimizing online reputation and local SEO for multi-location businesses"
+        platform="mobile/web"
+        current={true}
+        scala={true}
+        react={true}
+        typescript={true}
+        python={true}
+        nodejs={true}
+        k8s={true}
+        mongodb={true}
+        reactNative={true}
+        redis={true}
+        aws={true}
+        openai={true}/>
+      <Company
+        title="carrot"
+        description="ecommerce, order fulfillment, rewards and customer support platform"
+        platform="mobile/web"
+        scala={true}
+        react={true}
+        typescript={true}
+        redis={true}
+        ionic={true}
+        postgres={true}
+        heroku={true}/>
+    </div>
+  </>
 }
 
 export default Projects
