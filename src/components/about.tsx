@@ -7,7 +7,7 @@ export default function About() {
     input: React.ReactNode
   }
   const Input: React.FC<InputProps> = props => {
-    return <>
+    return <div className="flex-row justify-center">
       <h3 className="px-5 md:px-0 py-10 text-2xl">
         {props.title}
       </h3>
@@ -16,61 +16,72 @@ export default function About() {
           {props.input}
         </span>
       </div>
-    </>
+    </div>
   }
 
   return <Container>
     <div className="flex w-full h-full flex-col pb-10">
-      <div className="items-center">
+      <div className="flex justify-center">
         <h1 className="md:ml-0 ml-5 text-3xl mt-16">
           about
         </h1>
+      </div>
+      <div className="flex justify-center">
         <div className="w-full md:w-2/3">
           <Input
-            title="now"
+            title="lately"
             input={
               <>
-                I have built, helped build, maintained and expanded a number of projects
-                such as e-commerce websites, backend APIs and mobile apps to name a few.
-                I have used a lot of different languages and frameworks;
-                mostly React(Javascript/Typescript) for frontend and Nodejs/Go/Python/Scala
-                for backend.
+                Lately, like I'm sure most software enthusiasts, I've been exploring AI and continuing to refine my
+                craft. Most side projects are in scala, either using play or http4s with other popular(and some not
+                so popular) packages/frameworks.
                 <br /> <br />
-                I would consider myself more of a backend dev but I have created
-                multiple frontends using React for web and ReactNative/Ionic/Capacitor
-                for mobile. I have experience setting up and maintaining production
-                environments using CI/CD, Kubernetes with prometheus/grafana, cert-manager,
-                ingress-nginx and so much more. I love to automate things and
-                DevOps has always interested me.
-                <br /> <br />
-                Most recently I'm working on an e-commerce, order fulfillment, rewards and
-                customer support platform. We are using pure functional programming in Scala
-                for the backend, ScalaJS for our customers frontend and TypeScript/React for
-                their customers frontend.
+                Outside of work; I've been taking lots of pictures and got some cool long exposure shots of
+                lightning striking recently.
               </>}
           />
           <Input
-            title="blast from the past"
+            title="the before times"
             input={
               <>
-                I love to build things. I started off building with legos as a
-                child and that evolved into building with code starting around 12.
+                I've built/maintained/worked on websites, backend APIs and mobile apps.
+                The main languages and frameworks being react(javascript/typescript)/react native for the frontend
+                and scala/nodejs/python/go for the backend.
                 <br /> <br />
-                As a teenager, I was running an online text based multiplayer game
-                with an average of 15-30 daily users. It was coded in Visual
-                Basics 6 and that is when I fell in love with the endless
-                possibilities coding offers.
+                I have experience setting up and maintaining environments using CI/CD and kubernetes.
+                I love to automate things and DevOps has always interested me.
+                <br /> <br />
+                In the past I was working on an e-commerce, order fulfillment, rewards and
+                customer support platform. They had a pure functional backend in Scala, used ScalaJS
+                for our customers frontend and TypeScript/React for their customers frontend.
+              </>}
+          />
+          <Input
+            title="so ya like to build things?"
+            input={
+              <>
+                My love for building started off with legos as a child, evolved into building with
+                code around 12 and has progressed to building with hardware and wood as well now.
+                <br /> <br />
+                As a teenager, I was running an online text based multiplayer game with an average
+                of 15-30 daily users. It was coded in Visual Basics 6 and that is when I fell in love
+                with the endless possibilities coding offers.
+                <br /> <br />
+                Lately, I've dabbled in building a dash cam using a raspberry pi, a telephoto lens and
+                a TPU to run a MLM; but my pride and joy is my kitchen island. It holds my coffee station
+                and also serves as a big(and tall) cutting board. I'm tall, I like to cook, I don't like back
+                pain and kitchen counters in Texas seem to be low for me; so I made it tall :)
               </>}
           />
           <Input
             title="where ya been living?"
             input={
               <>
-                I was born on an island called Providenciales, AKA Provo, in Turks & Caicos Islands.
-                I moved to Quebec, Canada around the age of 9, learned French and at 17 I was
-                living on my own in Montreal working and continuing my education.
-                I lived there until my mid 20s before moving back to the islands
-                where I had been living up until 2020 when I moved to Texas.
+                I'm from a small island in Turks & Caicos Islands.
+                I moved to Quebec, Canada around the age of 9, learned French, fell in love with poutine
+                and at 17 I was living on my own in Montreal working and continuing my education. I lived
+                there until my mid 20s before moving back to the islands where I had been living up until 2020 when
+                I moved to Texas.
               </>}
           />
         </div>
