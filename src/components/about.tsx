@@ -7,7 +7,7 @@ export default function About() {
     input: React.ReactNode
   }
   const Input: React.FC<InputProps> = props => {
-    return <>
+    return <div className="flex-row justify-center">
       <h3 className="px-5 md:px-0 py-10 text-2xl">
         {props.title}
       </h3>
@@ -16,15 +16,17 @@ export default function About() {
           {props.input}
         </span>
       </div>
-    </>
+    </div>
   }
 
   return <Container>
     <div className="flex w-full h-full flex-col pb-10">
-      <div className="items-center">
+      <div className="flex justify-center">
         <h1 className="md:ml-0 ml-5 text-3xl mt-16">
           about
         </h1>
+      </div>
+      <div className="flex justify-center">
         <div className="w-full md:w-2/3">
           <Input
             title="lately"
