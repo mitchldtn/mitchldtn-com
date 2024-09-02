@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconType } from 'react-icons'
-import { FaLinkedin, FaGithub, FaGoodreads, FaInstagram } from "react-icons/fa"
+import { FaLinkedin, FaGithub, FaGoodreads, FaInstagram, FaStackOverflow } from "react-icons/fa"
 
 const Footer = () => {
 
@@ -41,10 +41,6 @@ const Footer = () => {
         </div>
         <div className="flex mt-5 items-center md:mt-0 flex-col md:flex-row">
           <OutsideLink
-            link="https://instagram.com/mitchldtn/"
-            linkTitle="instagram"
-            LinkLogo={FaInstagram} />
-          <OutsideLink
             link="https://linkedin.com/in/mitchldtn/"
             linkTitle="linkedin"
             LinkLogo={FaLinkedin} />
@@ -53,9 +49,17 @@ const Footer = () => {
             linkTitle="github"
             LinkLogo={FaGithub} />
           <OutsideLink
+            link="https://stackoverflow.com/users/3088464/mitchldtn"
+            linkTitle="stackoverflow"
+            LinkLogo={FaStackOverflow} />
+          <OutsideLink
             link="https://goodreads.com/mitchldtn"
             linkTitle="goodreads"
             LinkLogo={FaGoodreads} />
+          <OutsideLink
+            link="https://instagram.com/mitchldtn/"
+            linkTitle="instagram"
+            LinkLogo={FaInstagram} />
         </div>
       </div>
     </div>
