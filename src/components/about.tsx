@@ -36,8 +36,8 @@ export default function About() {
                 craft. Most side projects are in scala, either using play or http4s with other popular(and some not
                 so popular) packages/frameworks.
                 <br /> <br />
-                Outside of work; I've been taking lots of pictures and got some cool long exposure shots of
-                lightning striking recently.
+                Outside of work; I've been taking lots of pictures, continuing to build things, exploring Texas/Austin
+                and making more connections here in Austin.
               </>}
           />
           <Input
@@ -53,7 +53,7 @@ export default function About() {
                 <br /> <br />
                 In the past I was working on an e-commerce, order fulfillment, rewards and
                 customer support platform. They had a pure functional backend in Scala, used ScalaJS
-                for our customers frontend and TypeScript/React for their customers frontend.
+                for our customers frontend and TypeScript/React for our customers customers frontend.
               </>}
           />
           <Input
@@ -68,9 +68,8 @@ export default function About() {
                 with the endless possibilities coding offers.
                 <br /> <br />
                 Lately, I've dabbled in building a dash cam using a raspberry pi, a telephoto lens and
-                a TPU to run a MLM; but my pride and joy is my kitchen island. It holds my coffee station
-                and also serves as a big(and tall) cutting board. I'm tall, I like to cook, I don't like back
-                pain and kitchen counters in Texas seem to be low for me; so I made it tall :)
+                a TPU to run a MLM; but my pride and joy is my butcher block kitchen 'island'. It holds my coffee station
+                and also serves as a big(and tall) cutting board.
               </>}
           />
           <Input
