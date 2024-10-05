@@ -20,9 +20,9 @@ const Intro = () => {
       <div className="mt-20 w-full sm:w-3/5">
         <span className="w-full h-full items-center mb-10">
           I'm a Software Engineer from Turks & Caicos Islands; currently living in Austin, Texas.
-          I love keeping my dog entertained, building/automating/taking pictures of things, working with wood,
+          I love keeping my dog entertained, building/automating things, capturing moments through photography,
           exploring new places, taking on DIY projects, playing outdoor basketball, enjoying live music,
-          appreciating a nice scotch/bourbon, seeking out new knowledge and embracing the beauty of nature.
+          seeking out new knowledge and embracing the beauty of nature.
           I'm charting my own path in life where I constantly focus on developing self-awareness, pushing for growth,
           designing for work-life harmony and prioritizing physical and mental well-being. Find out more about me{" "}
           <Link
