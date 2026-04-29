@@ -101,9 +101,9 @@ const Projects = () => {
     <div className="px-2 mt-10">
       <span className="text-4xl">Recent Professional Experience</span>
       <Company
-        title="chatmeter"
+        title="alchemer"
         description="AI-driven platform for managing and optimizing online reputation and local SEO for multi-location businesses"
-        platform="mobile/web"
+        platform="web"
         current={true}
         scala={true}
         react={true}
