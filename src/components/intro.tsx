@@ -24,7 +24,7 @@ const Intro = () => {
     return (
       <div className="flex flex-col md:flex-row justify-between">
         <IntroText />
-        <div style={{ width: "600px"}} className="self-center items-center p-10 h-full">
+        <div className="self-center items-center p-4 md:p-10 h-full w-full max-w-[600px]">
           <img
             src="/mitch-and-boots.jpg"
             alt="mitch (right) & boots (left)"
