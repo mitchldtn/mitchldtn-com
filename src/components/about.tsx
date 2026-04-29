@@ -29,58 +29,33 @@ export default function About() {
       <div className="flex justify-center">
         <div className="w-full md:w-2/3">
           <Input
-            title="lately"
+            title="The Craft"
             input={
               <>
-                Lately, like I'm sure most software enthusiasts, I've been exploring AI and continuing to refine my
-                craft. Most side projects are in scala, either using play or http4s with other popular(and some not
-                so popular) packages/frameworks.
-                <br /> <br />
-                Outside of work; I've been taking lots of pictures, continuing to build things, exploring Texas/Austin
-                and making more connections here in Austin.
+                I've always been driven by the process of building. In the digital space, that means architecting
+                scalable, complex systems. Currently, my focus is on the intersection of AI, context management
+                and distributed computing, primarily utilizing Scala, TypeScript and the modern cloud stack (k8s/AWS).
               </>}
           />
           <Input
-            title="the before times"
+            title="The Workshop"
             input={
               <>
-                I've built/maintained/worked on websites, backend APIs and mobile apps.
-                The main languages and frameworks being react(javascript/typescript)/react native for the frontend
-                and scala/nodejs/python/go for the backend.
-                <br /> <br />
-                I have experience setting up and maintaining environments using CI/CD and kubernetes.
-                I love to automate things and DevOps has always interested me.
-                <br /> <br />
-                In the past I was working on an e-commerce, order fulfillment, rewards and
-                customer support platform. They had a pure functional backend in Scala, used ScalaJS
-                for our customers frontend and TypeScript/React for our customers customers frontend.
+                My interest in building isn't limited to code. It started with Legos as a child and evolved into
+                running a multiplayer game in Visual Basic 6 as a teenager. Today, that same curiosity drives me
+                to work with hardware and wood. Whether it's experimenting with a Raspberry Pi-based dash cam or
+                crafting a custom butcher block kitchen island, I'm at my best when I'm creating something
+                functional from scratch.
               </>}
           />
           <Input
-            title="so ya like to build things?"
+            title="The Journey"
             input={
               <>
-                My love for building started off with legos as a child, evolved into building with
-                code around 12 and has progressed to building with hardware and wood as well now.
-                <br /> <br />
-                As a teenager, I was running an online text based multiplayer game with an average
-                of 15-30 daily users. It was coded in Visual Basics 6 and that is when I fell in love
-                with the endless possibilities coding offers.
-                <br /> <br />
-                Lately, I've dabbled in building a dash cam using a raspberry pi, a telephoto lens and
-                a TPU to run a MLM; but my pride and joy is my butcher block kitchen 'island'. It holds my coffee station
-                and also serves as a big(and tall) cutting board.
-              </>}
-          />
-          <Input
-            title="where ya been living?"
-            input={
-              <>
-                I'm from a small island in Turks & Caicos Islands.
-                I moved to Quebec, Canada around the age of 9, learned French, fell in love with poutine
-                and at 17 I was living on my own in Montreal working and continuing my education. I lived
-                there until my mid 20s before moving back to the islands where I had been living up until 2020 when
-                I moved to Texas.
+                My path has been anything but linear. I grew up in Turks & Caicos islands, moved to Quebec at age nine,
+                and learned to navigate the world in both English and French. After years of living in Montreal and
+                then more years back on island, I eventually found my way to the heat and energy of Austin, Texas.
+                Every move has been a new opportunity to expand my perspective and refine my craft.
               </>}
           />
         </div>
