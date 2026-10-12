@@ -4,7 +4,7 @@ description: "Consistency goes further than cleverness: how session context in M
 date: 2026-10-12
 type: post
 topics: [workflows, building-nemonik]
-draft: true
+draft: false
 ---
 
 What I needed was for my agent to do the same steps the same way every session. This is how I got there, starting with a folder of Markdown files.
