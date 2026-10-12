@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+import NemonikPieces from "../components/NemonikPieces.astro";
+import { beta, cliRepo, docs } from "../lib/links";
+---
+
+<Base
+  title="Projects: Mitch Ludington"
+  description="nemonik, the workflow layer for coding agents."
+  path="/projects"
+>
+  <section class="mx-auto max-w-[1000px] px-5 pt-[30px] pb-10">
+    <h1 class="sec">projects</h1>
+    <div class="grid gap-3.5">
+      <div class="card border-2 border-greyish">
+        <div class="eyebrow">software · now</div>
+        <h2 class="mb-2 text-lg font-normal">nemonik</h2>
+        <p class="mb-2">the workflow layer for coding agents.</p>
+        <NemonikPieces />
+        <div class="text-[11px] text-dim">stack</div>
+        <p class="mb-3">Rust CLI · Scala API · Python MCP server · React · PostgreSQL · k8s</p>
+        <div class="flex flex-wrap gap-3">
+          <a class="btn btn-primary" href={beta} target="_blank" rel="noopener noreferrer">nemonik.io</a>
+          <a class="btn" href={docs} target="_blank" rel="noopener noreferrer">Docs</a>
+          <a class="btn" href={cliRepo} target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

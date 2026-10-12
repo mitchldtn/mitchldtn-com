@@ -1,0 +1,68 @@
+---
+import Base from "../layouts/Base.astro";
+
+// The three sections are the previous site's text, word for word.
+const sections = [
+  {
+    title: "The Craft",
+    text: "I've always been driven by the process of building. In software, that means architecting complex, scalable systems. My focus is on the intersection of AI, workflows, context management and distributed computing.",
+  },
+  {
+    title: "The Workshop",
+    text: "My interest in building isn't limited to code. It started with Legos as a child and evolved into running a multiplayer game in Visual Basic 6 as a teenager. Today, that same curiosity drives me to work with hardware and wood. Whether it's experimenting with a Raspberry Pi-based dash cam or crafting a custom butcher block kitchen island, I'm at my best when I'm creating something functional from scratch.",
+  },
+  {
+    title: "The Journey",
+    text: "My path has been anything but linear. I grew up in Turks & Caicos Islands, moved to Quebec at age nine and learned to navigate the world in both English and French. After years in Montreal and then more years back on island, I found my way to the heat and energy of Austin, Texas. Every move has expanded my perspective and refined my craft.",
+  },
+];
+
+const work = [
+  {
+    when: "current",
+    name: "alchemer",
+    what: "AI-driven platform for online reputation and local SEO for multi-location businesses",
+    stack: "Scala · TypeScript · React · Python · k8s · AWS · OpenAI",
+  },
+  {
+    when: "before",
+    name: "carrot",
+    what: "ecommerce, order fulfillment, rewards and customer support platform",
+    stack: "Scala · TypeScript · React · Ionic · PostgreSQL · Heroku",
+  },
+];
+---
+
+<Base
+  title="About: Mitch Ludington"
+  description="Software engineer in Austin, Texas, from Turks & Caicos. Distributed systems, AI and context management, hardware and wood."
+  path="/about"
+>
+  <div class="mx-auto max-w-[1000px] px-5 pt-[30px] pb-[30px]">
+    <h1 class="sec">about</h1>
+    {
+      sections.map(({ title, text }) => (
+        <section>
+          <h2 class="eyebrow mt-6">{title}</h2>
+          <p class="muted">{text}</p>
+        </section>
+      ))
+    }
+
+    <h2 class="eyebrow mt-7">Work</h2>
+    <div class="grid gap-3.5 sm:grid-cols-2">
+      {
+        work.map(({ when, name, what, stack }) => (
+          <div class="card">
+            <div class="text-[11px] text-dim">{when}</div>
+            <h3 class="mb-2 text-[13px] font-normal">{name}</h3>
+            <div class="text-[11px] text-dim">what</div>
+            <p class="mb-2">{what}</p>
+            <div class="text-[11px] text-dim">stack</div>
+            <p>{stack}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,24 @@
+---
+const pieces = [
+  { name: "Kits.", text: "A system prompt, skills, MCP servers and hooks, tied together by a workflow." },
+  {
+    name: "Workflows.",
+    text: "The steps in order and which skills to use. A workflow can start the next kit: you run the plan kit, approve the plan and the build kit opens in a new session on its own, then runs the review kit automatically when it's done.",
+  },
+  {
+    name: "Memory.",
+    text: "A running memory, journal and status that carry what each session learned into the next, in files in your repo or in nemonik's hosted store.",
+  },
+];
+---
+
+<ul class="my-3.5 text-sm leading-[1.6]">
+  {
+    pieces.map(({ name, text }) => (
+      <li class="mb-2">
+        <span class="text-redish">&gt; </span>
+        <span class="text-greyish">{name}</span> {text}
+      </li>
+    ))
+  }
+</ul>
