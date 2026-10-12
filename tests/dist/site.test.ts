@@ -238,6 +238,16 @@ describe.each(published)("published post %s", (slug) => {
     expect(pngSize(`og/${slug}.png`)).toEqual({ width: 1200, height: 630 });
   });
 
+  it("uses the post title alone on link cards and adds the site name to the page title", () => {
+    const html = read(file);
+    const cardTitle = meta(html, "og:title");
+    expect(cardTitle).toBeTruthy();
+    expect(cardTitle).not.toContain("Mitch Ludington");
+    expect(meta(html, "twitter:title")).toBe(cardTitle);
+    const decode = (s?: string) => s?.replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&");
+    expect(decode(title(html))).toBe(`${decode(cardTitle)?.replace(/\.$/, "")}: Mitch Ludington`);
+  });
+
   it("ends with the nemonik call to action after the body", () => {
     const html = read(file);
     const body = html.indexOf('class="prose"');

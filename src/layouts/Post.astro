@@ -13,7 +13,8 @@ const { post } = Astro.props;
 ---
 
 <Base
-  title={`${post.title}: Mitch Ludington`}
+  title={`${post.title.replace(/\.$/, "")}: Mitch Ludington`}
+  cardTitle={post.title}
   description={post.description}
   path={`/writing/${post.slug}`}
   image={`/og/${post.slug}.png`}
