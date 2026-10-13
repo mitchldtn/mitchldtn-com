@@ -28,10 +28,9 @@ const nav = [
 ];
 const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`);
 
-const linkedin = "https://www.linkedin.com/in/mitchldtn/";
 const footerLinks = [
   { label: "github", href: "https://github.com/mitchldtn" },
-  { label: "linkedin", href: linkedin },
+  { label: "linkedin", href: "https://www.linkedin.com/in/mitchldtn/" },
   { label: "rss", href: "/rss.xml" },
 ];
 ---
@@ -99,11 +98,6 @@ const footerLinks = [
                 </li>
               ))
             }
-            <li>
-              <a href={linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-redish">
-                contact
-              </a>
-            </li>
           </ul>
         </nav>
       </div>

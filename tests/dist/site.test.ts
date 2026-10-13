@@ -85,7 +85,8 @@ describe("every page", () => {
   it.each(pages)("$file has the shared shell", ({ html }) => {
     expect(html).toMatch(/<a href="\/"[^>]*>mitch ludington<\/a>/);
     for (const href of ["/writing", "/projects", "/about"]) expect(html).toContain(`href="${href}"`);
-    expect(html).toMatch(/href="https:\/\/www\.linkedin\.com\/in\/mitchldtn\/"[^>]*>\s*contact/);
+    expect(html).not.toMatch(/>\s*contact\s*</);
+    expect(html).toContain(`href="https://www.linkedin.com/in/mitchldtn/"`);
     // The footer year is the build's year; allow the previous one for a build that ran before New Year.
     const year = Number(html.match(/© (\d{4}) mitch ludington/)?.[1]);
     expect([new Date().getFullYear(), new Date().getFullYear() - 1]).toContain(year);
@@ -349,5 +350,32 @@ describe("external links", () => {
       .map((m) => attrs(m[0]))
       .filter((a) => (a.href ?? "").startsWith("/") || (a.href ?? "").startsWith("#"));
     expect(internal.filter((a) => a.target === "_blank").map((a) => a.href)).toEqual([]);
+  });
+});
+
+describe("spacing around inline links", () => {
+  // Astro drops a line break between text and a following tag, which glues words to links.
+  it.each(pages)("$file has a space between words and the links next to them", ({ html }) => {
+    const body = html.replace(/<(script|style)[\s\S]*?<\/\1>/g, "");
+    const glued = [
+      ...[...body.matchAll(/[A-Za-z0-9.,:;!?)]<a\b/g)].map((m) => body.slice(m.index - 30, m.index + 30)),
+      ...[...body.matchAll(/<\/a>[A-Za-z0-9(]/g)].map((m) => body.slice(m.index - 30, m.index + 10)),
+    ];
+    expect(glued).toEqual([]);
+  });
+});
+
+describe("media", () => {
+  it.each(pages)("$file only references media files that exist", ({ html }) => {
+    const refs = [...html.matchAll(/(?:src|poster)="(\/media\/[^"]+)"/g)].map((m) => m[1].slice(1));
+    expect(refs.filter((r) => !files.includes(r))).toEqual([]);
+  });
+
+  it("the home page shows the demo as a still until it's played, and loads nothing before that", () => {
+    const video = read("index.html").match(/<video[^>]*>/)?.[0] ?? "";
+    for (const a of ["controls", "playsinline"]) expect(video).toMatch(new RegExp(`\\s${a}[\\s>]`));
+    for (const a of ["autoplay", "loop"]) expect(video).not.toMatch(new RegExp(`\\s${a}[\\s>]`));
+    expect(video).toContain(`preload="none"`);
+    expect(video).toMatch(/poster="\/media\//);
   });
 });

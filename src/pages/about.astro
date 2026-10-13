@@ -1,7 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
 
-// The three sections are the previous site's text, word for word.
 const sections = [
   {
     title: "The Craft",
@@ -14,21 +13,6 @@ const sections = [
   {
     title: "The Journey",
     text: "My path has been anything but linear. I grew up in Turks & Caicos Islands, moved to Quebec at age nine and learned to navigate the world in both English and French. After years in Montreal and then more years back on island, I found my way to the heat and energy of Austin, Texas. Every move has expanded my perspective and refined my craft.",
-  },
-];
-
-const work = [
-  {
-    when: "current",
-    name: "alchemer",
-    what: "AI-driven platform for online reputation and local SEO for multi-location businesses",
-    stack: "Scala · TypeScript · React · Python · k8s · AWS · OpenAI",
-  },
-  {
-    when: "before",
-    name: "carrot",
-    what: "ecommerce, order fulfillment, rewards and customer support platform",
-    stack: "Scala · TypeScript · React · Ionic · PostgreSQL · Heroku",
   },
 ];
 ---
@@ -48,21 +32,5 @@ const work = [
         </section>
       ))
     }
-
-    <h2 class="eyebrow mt-7">Work</h2>
-    <div class="grid gap-3.5 sm:grid-cols-2">
-      {
-        work.map(({ when, name, what, stack }) => (
-          <div class="card">
-            <div class="text-[11px] text-dim">{when}</div>
-            <h3 class="mb-2 text-[13px] font-normal">{name}</h3>
-            <div class="text-[11px] text-dim">what</div>
-            <p class="mb-2">{what}</p>
-            <div class="text-[11px] text-dim">stack</div>
-            <p>{stack}</p>
-          </div>
-        ))
-      }
-    </div>
   </div>
 </Base>

@@ -58,10 +58,8 @@ const newest = latest(await posts(), 3);
     <section class="blk">
       <h2 class="sec">the problem</h2>
       <p class="border-l-[3px] border-redish py-1 pl-[18px] text-base leading-[1.75]">
-        My workflow was in the system prompt/CLAUDE.md and in skills. I even added a hook that said "MAKE SURE YOU'RE
-        FOLLOWING THIS WORKFLOW...". My agent still skipped steps and made judgement calls I never asked for, told me
-        "You're absolutely right!" when I caught it and did it again the next session. The setup kept growing: more rules and memories it didn't
-        follow consistently, skills it may or may not pick up, every MCP server switched on for every task.
+        My agent had my workflow and still skipped steps. The more rules and context I added, the less consistently it
+        followed them.
       </p>
       <div class="mt-7 grid gap-3.5 md:grid-cols-3">
         <div class="card text-[13.5px]">
@@ -83,24 +81,64 @@ const newest = latest(await posts(), 3);
       <h2 class="sec">now building</h2>
       <div class="rounded-[10px] border-2 border-greyish bg-blackish p-6 sm:p-[26px]">
         <div class="eyebrow">nemonik · the workflow layer for coding agents</div>
-        <p class="mb-[22px] text-base leading-[1.7]">
+        <h3 class="mb-3 text-xl leading-[1.4] font-normal">
+          Give coding agents a repeatable workflow, the right tools for each step and the context to continue where the
+          last session left off.
+        </h3>
+        <p class="mb-[22px] text-base leading-[1.7] text-dim">
           I'm building nemonik around the third approach. It breaks the workflow into kits, one per step, each with its
           own system prompt, skills, MCP servers and hooks, so the agent only gets what that step needs.
         </p>
 
-        <div class="grid gap-7 md:grid-cols-2">
-          <div class="min-w-0">
-            <NemonikPieces />
+        <figure
+          class="overflow-hidden rounded-[10px] border border-white/15 bg-term shadow-[0_20px_50px_-12px_rgba(0,0,0,0.7)]"
+          data-demo
+        >
+          <figcaption class="flex items-center gap-2 border-b border-white/10 bg-[#1f242c] px-3.5 py-2.5 text-xs text-dim">
+            <span class="size-2.5 rounded-full bg-[#ff5f57]"></span>
+            <span class="size-2.5 rounded-full bg-[#febc2e]"></span>
+            <span class="size-2.5 rounded-full bg-[#28c840]"></span>
+            <span class="ml-2 truncate">taskboard-demo · a real nemonik run</span>
+          </figcaption>
+          <div class="relative">
+            <video
+              class="block w-full"
+              src="/media/nemonik-demo-v1.mp4"
+              poster="/media/nemonik-demo-v1.webp"
+              width="1200"
+              height="676"
+              controls
+              muted
+              playsinline
+              preload="none"
+              aria-label="A real nemonik run: the plan kit asks a question, you approve, the build kit opens on its own, builds test-first, the review kit approves and the specs are updated."
+            ></video>
+            <button
+              type="button"
+              hidden
+              class="absolute inset-0 flex items-center justify-center bg-black/25 transition hover:bg-black/10"
+              aria-label="Play the demo"
+            >
+              <span class="rounded-full bg-redish px-5 py-3 text-sm text-navy shadow-lg">▶ Watch · 0:34</span>
+            </button>
           </div>
-          <pre class="term min-w-0 self-start"><span class="text-[#6b7685]"># one command: plan runs,
-# then build and review start themselves</span>
-<span class="text-redish">$</span> nk example sdd
-<span class="text-redish">$</span> cp -R sdd/nemonik.json sdd/kit sdd/sdd your-repo/
-<span class="text-redish">$</span> cd your-repo
-<span class="text-redish">$</span> nk run sdd:plan -- add recurring tasks
+        </figure>
+        <script is:inline>
+          for (const demo of document.querySelectorAll("[data-demo]")) {
+            const video = demo.querySelector("video");
+            const play = demo.querySelector("button");
+            video.controls = false;
+            play.hidden = false;
+            play.addEventListener("click", () => {
+              play.hidden = true;
+              video.controls = true;
+              video.play();
+            });
+          }
+        </script>
 
-<span class="text-[#6b7685]"># the whole chain on Codex</span>
-<span class="text-redish">$</span> nk run sdd:plan --agent codex -- add recurring tasks</pre>
+        <div class="mt-6">
+          <NemonikPieces />
         </div>
 
         <div class="mt-6 border-t border-faint pt-6" data-cta="nemonik">
