@@ -1,0 +1,79 @@
+---
+import Base from "../layouts/Base.astro";
+import { beta, cliRepo, docs } from "../lib/links";
+
+const parts = [
+  {
+    name: "CLI",
+    stack: "Rust",
+    text: "nk run starts Claude Code or Codex in its own tmux session with a kit's system prompt, skills, MCP servers, hooks and workflow in place. Skills go into a folder for that session, outside your repo. The folder is removed when the session ends. It ships as one signed binary through Homebrew or an install script.",
+  },
+  {
+    name: "MCP server",
+    stack: "Python",
+    text: "Holds the context, memory, journal and status for each project, plus kits, prompts and skills. Search combines full-text matching with text embeddings, so agents find things by meaning. Claude, ChatGPT and Codex connect to it over OAuth.",
+  },
+  {
+    name: "API",
+    stack: "Scala",
+    text: "Owns the database schema and the login flow (OAuth 2.1 with PKCE). Postgres row-level security decides who can read or edit each kit, prompt, skill and project.",
+  },
+  {
+    name: "Web app",
+    stack: "React, TypeScript",
+    text: "Where kits, prompts, skills and workflows are written and edited. A project's context can be read and searched there too.",
+  },
+  {
+    name: "Infrastructure",
+    stack: "Postgres with pgvector, Redis, Kubernetes",
+    text: "Postgres stores everything, including the embeddings. It runs on Kubernetes, deployed through ArgoCD.",
+  },
+];
+
+---
+
+<Base
+  title="Projects: Mitch Ludington"
+  description="nemonik, the workflow layer for coding agents: what it does and how it's built."
+  path="/projects"
+>
+  <section class="mx-auto max-w-[1000px] px-5 pt-[30px] pb-10">
+    <h1 class="sec">projects</h1>
+
+    <div class="card border-2 border-greyish">
+      <div class="eyebrow">software · now</div>
+      <h2 class="mb-2 text-lg font-normal">nemonik</h2>
+      <p class="mb-4">
+        Give coding agents a repeatable workflow, the right tools for each step and the context to continue where the
+        last session left off.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a class="btn btn-primary" href={beta} target="_blank" rel="noopener noreferrer">nemonik.io</a>
+        <a class="btn" href={docs} target="_blank" rel="noopener noreferrer">Docs</a>
+        <a class="btn" href={cliRepo} target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+
+    <div class="mt-10 max-w-[760px]">
+      <h2 class="eyebrow">The problem</h2>
+      <p class="muted">
+        My agent had my workflow and still skipped steps. The more rules and context I added, the less consistently it
+        followed them. The full story is in <a href="/writing/consistently-follows-how-i-work" class="underline hover:text-redish">my first post</a>.
+      </p>
+
+      <h2 class="eyebrow mt-10">How it's built</h2>
+      <dl class="text-sm leading-[1.7]">
+        {
+          parts.map(({ name, stack, text }) => (
+            <div class="mb-5">
+              <dt>
+                {name} <span class="text-dim">· {stack}</span>
+              </dt>
+              <dd class="text-dim">{text}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+</Base>

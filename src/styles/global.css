@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #151a22;
+  --color-redish: #E0787B;
+  --color-greyish: #9CDBFB;
+  --color-blackish: #272B2E;
+  --color-term: #0b0e13;
+  --color-dim: rgb(255 255 255 / 0.62);
+  --color-faint: rgb(255 255 255 / 0.12);
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-mono);
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0, "calt" 0;
+  }
+  body {
+    background-color: var(--color-navy);
+    color: #fff;
+  }
+  code {
+    color: var(--color-redish);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block rounded border border-white px-3.5 py-2 text-[13px] no-underline hover:border-redish hover:text-redish;
+  }
+  .btn-primary {
+    @apply border-redish bg-redish text-navy hover:bg-transparent;
+  }
+  .sec {
+    @apply mb-[18px] text-[22px] font-normal;
+  }
+  .sec::after {
+    content: ".";
+    color: var(--color-redish);
+  }
+  .blk {
+    @apply border-t border-faint py-10;
+  }
+  .muted {
+    @apply text-sm leading-[1.7] text-dim;
+  }
+  .eyebrow {
+    @apply mb-2 text-xs text-greyish;
+  }
+  .card {
+    @apply rounded-lg bg-blackish p-4 text-[13px] leading-[1.6];
+  }
+  .term {
+    @apply overflow-x-auto rounded-md bg-term p-3.5 text-[12.5px] leading-[1.7] whitespace-pre text-[#d6dde6];
+  }
+
+  .prose {
+    @apply text-[15px] leading-[1.85] text-white/90;
+  }
+  .prose p,
+  .prose ul,
+  .prose ol {
+    @apply my-4;
+  }
+  .prose ul {
+    @apply list-disc pl-6;
+  }
+  .prose ol {
+    @apply list-decimal pl-6;
+  }
+  .prose h2 {
+    @apply mt-[30px] mb-2.5 text-[19px] font-normal text-greyish;
+  }
+  .prose h3 {
+    @apply mt-6 mb-2 text-base text-greyish;
+  }
+  .prose a {
+    @apply underline hover:text-redish;
+  }
+  .prose pre {
+    @apply my-5 overflow-x-auto rounded-md p-3.5 text-[13px] leading-[1.7];
+  }
+  .prose pre code {
+    color: inherit;
+  }
+  .prose blockquote {
+    @apply my-5 border-l-[3px] border-redish pl-[18px];
+  }
+}

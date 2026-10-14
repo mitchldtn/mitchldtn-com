@@ -1,0 +1,52 @@
+---
+import Base from "./Base.astro";
+import NemonikCta from "../components/NemonikCta.astro";
+import type { Post } from "../lib/content";
+import { isoDay, monthYear } from "../lib/dates";
+import { topicLabel } from "../lib/posts";
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+---
+
+<Base
+  title={`${post.title.replace(/\.$/, "")}: Mitch Ludington`}
+  cardTitle={post.title}
+  description={post.description}
+  path={`/writing/${post.slug}`}
+  image={`/og/${post.slug}.png`}
+>
+  <article class="mx-auto max-w-[700px] px-5 pt-[30px]">
+    <div class="eyebrow">
+      {
+        post.topics.map((t) => (
+          <>
+            <a href={`/writing/topic/${t}`} class="hover:text-redish">
+              {topicLabel(t)}
+            </a>
+            {" · "}
+          </>
+        ))
+      }
+      <span>{post.type}</span>
+    </div>
+    <h1 class="mt-2.5 mb-3 text-[26px] leading-[1.35] font-normal sm:text-[30px]">{post.title}</h1>
+    <div class="mb-7 text-xs text-dim">
+      <time datetime={isoDay(post.date)}>{monthYear(post.date)}</time> · {post.minutes} min read
+    </div>
+    <div class="prose">
+      <slot />
+    </div>
+    <section class="blk">
+      <div class="rounded-[10px] bg-blackish p-6">
+        <NemonikCta
+          heading="Want to try this on one real ticket?"
+          body="I'm looking for a few developers who use Claude Code or Codex every day."
+        />
+      </div>
+    </section>
+  </article>
+</Base>

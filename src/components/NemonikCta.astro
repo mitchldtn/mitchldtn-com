@@ -1,0 +1,21 @@
+---
+import { beta, cliRepo } from "../lib/links";
+
+interface Props {
+  heading: string;
+  body: string;
+}
+
+const { heading, body } = Astro.props;
+---
+
+<div class="grid gap-6 md:grid-cols-[1.2fr_1fr]" data-cta="nemonik">
+  <div>
+    <h2 class="mb-2.5 text-lg leading-normal font-normal">{heading}</h2>
+    <p class="muted">{body}</p>
+  </div>
+  <div class="flex flex-wrap items-center gap-3 self-center">
+    <a class="btn btn-primary" href={cliRepo} target="_blank" rel="noopener noreferrer">Install the CLI</a>
+    <a class="btn" href={beta} target="_blank" rel="noopener noreferrer">Join the beta</a>
+  </div>
+</div>

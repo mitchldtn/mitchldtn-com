@@ -1,0 +1,30 @@
+---
+import Base from "../../../layouts/Base.astro";
+import PostList from "../../../components/PostList.astro";
+import { posts, type Post } from "../../../lib/content";
+import { byTopic, topicLabel, type Topic } from "../../../lib/posts";
+
+export async function getStaticPaths() {
+  return [...byTopic(await posts())].map(([topic, list]) => ({
+    params: { topic },
+    props: { topic, list },
+  }));
+}
+
+const { topic, list } = Astro.props as { topic: Topic; list: Post[] };
+const label = topicLabel(topic);
+---
+
+<Base
+  title={`Writing on ${label}: Mitch Ludington`}
+  description={`Posts, experiments and demos on ${label}, from building with coding agents every day.`}
+  path={`/writing/topic/${topic}`}
+>
+  <section class="mx-auto max-w-[1000px] px-5 pt-[30px] pb-2.5">
+    <h1 class="sec">{label}</h1>
+    <p class="muted mb-4">
+      <a href="/writing" class="underline hover:text-redish">All writing</a> · <a href="/rss.xml" class="underline hover:text-redish">RSS</a>
+    </p>
+    <PostList posts={list} />
+  </section>
+</Base>

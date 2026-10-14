@@ -1,0 +1,38 @@
+---
+import Base from "../../layouts/Base.astro";
+import PostList from "../../components/PostList.astro";
+import { posts } from "../../lib/content";
+import { byTopic, newestFirst, topicLabel } from "../../lib/posts";
+
+const all = await posts();
+const list = newestFirst(all);
+const withPosts = [...byTopic(all).keys()];
+---
+
+<Base
+  title="Writing: Mitch Ludington"
+  description="Posts, experiments and demos on agentic engineering: workflows, continuity across sessions and building nemonik in public."
+  path="/writing"
+>
+  <section class="mx-auto max-w-[1000px] px-5 pt-[30px] pb-2.5">
+    <h1 class="sec">writing</h1>
+    <p class="muted mb-4">
+      What works, what fails and why, from building with coding agents every day. <a href="/rss.xml" class="underline hover:text-redish">RSS</a>
+    </p>
+    {
+      list.length > 1 && (
+        <nav aria-label="topics" class="mb-2.5 flex flex-wrap gap-2 text-xs">
+          <a href="/writing" aria-current="page" class="rounded-xl border border-redish px-2.5 py-[3px] text-redish">
+            all
+          </a>
+          {withPosts.map((t) => (
+            <a href={`/writing/topic/${t}`} class="rounded-xl border border-faint px-2.5 py-[3px] hover:text-redish">
+              {topicLabel(t)}
+            </a>
+          ))}
+        </nav>
+      )
+    }
+    {list.length > 0 ? <PostList posts={list} /> : <p class="muted py-4">No posts yet.</p>}
+  </section>
+</Base>

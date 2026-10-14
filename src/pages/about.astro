@@ -1,0 +1,36 @@
+---
+import Base from "../layouts/Base.astro";
+
+const sections = [
+  {
+    title: "The Craft",
+    text: "I've always been driven by the process of building. In software, that means architecting complex, scalable systems. My focus is on the intersection of AI, workflows, context management and distributed computing.",
+  },
+  {
+    title: "The Workshop",
+    text: "My interest in building isn't limited to code. It started with Legos as a child and evolved into running a multiplayer game in Visual Basic 6 as a teenager. Today, that same curiosity drives me to work with hardware and wood. Whether it's experimenting with a Raspberry Pi-based dash cam or crafting a custom butcher block kitchen island, I'm at my best when I'm creating something functional from scratch.",
+  },
+  {
+    title: "The Journey",
+    text: "My path has been anything but linear. I grew up in Turks & Caicos Islands, moved to Quebec at age nine and learned to navigate the world in both English and French. After years in Montreal and then more years back on island, I found my way to the heat and energy of Austin, Texas. Every move has expanded my perspective and refined my craft.",
+  },
+];
+---
+
+<Base
+  title="About: Mitch Ludington"
+  description="Software engineer in Austin, Texas, from Turks & Caicos. Distributed systems, AI and context management, hardware and wood."
+  path="/about"
+>
+  <div class="mx-auto max-w-[1000px] px-5 pt-[30px] pb-[30px]">
+    <h1 class="sec">about</h1>
+    {
+      sections.map(({ title, text }) => (
+        <section>
+          <h2 class="eyebrow mt-6">{title}</h2>
+          <p class="muted">{text}</p>
+        </section>
+      ))
+    }
+  </div>
+</Base>

@@ -1,0 +1,6 @@
+{
+  "project": "mitchldtn",
+  "aliases": {
+    "sdd": "mitchldtn/sdd:plan"
+  }
+}

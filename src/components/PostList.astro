@@ -1,0 +1,31 @@
+---
+import type { Post } from "../lib/content";
+import { isoDay, monthYear } from "../lib/dates";
+
+interface Props {
+  posts: readonly Post[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul>
+  {
+    posts.map((p) => (
+      <li class="grid grid-cols-1 items-baseline gap-1 border-b border-dashed border-faint py-4 text-sm sm:grid-cols-[100px_1fr_auto] sm:gap-4">
+        <time class="text-xs text-dim" datetime={isoDay(p.date)}>
+          {monthYear(p.date)}
+        </time>
+        <span class="leading-normal">
+          <a href={`/writing/${p.slug}`} class="hover:text-redish">
+            {p.title}
+          </a>
+          <span class="mt-1 block text-[12.5px] text-dim">{p.description}</span>
+        </span>
+        <span class="justify-self-start rounded-[3px] border border-greyish px-[5px] text-[11px] whitespace-nowrap text-greyish">
+          {p.type}
+        </span>
+      </li>
+    ))
+  }
+</ul>
