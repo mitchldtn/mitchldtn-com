@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { beta, cliRepo, docs } from "../lib/links";
+import { cliRepo, docs, site } from "../lib/links";
 
 const parts = [
   {
@@ -48,7 +48,7 @@ const parts = [
         last session left off.
       </p>
       <div class="flex flex-wrap gap-3">
-        <a class="btn btn-primary" href={beta} target="_blank" rel="noopener noreferrer">nemonik.io</a>
+        <a class="btn btn-primary" href={site} target="_blank" rel="noopener noreferrer">nemonik.io</a>
         <a class="btn" href={docs} target="_blank" rel="noopener noreferrer">Docs</a>
         <a class="btn" href={cliRepo} target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
