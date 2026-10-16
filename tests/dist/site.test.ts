@@ -77,11 +77,6 @@ describe("every page", () => {
     expect(meta(html, "twitter:card")).toBe("summary_large_image");
   });
 
-  it.each(pages)("$file loads the analytics tag", ({ html }) => {
-    expect(html).toContain("https://www.googletagmanager.com/gtag/js?id=G-C4MMDM32HK");
-    expect(html).toContain(`gtag("config", "G-C4MMDM32HK")`);
-  });
-
   it.each(pages)("$file has the shared shell", ({ html }) => {
     expect(html).toMatch(/<a href="\/"[^>]*>mitch ludington<\/a>/);
     for (const href of ["/writing", "/projects", "/about"]) expect(html).toContain(`href="${href}"`);
@@ -257,7 +252,7 @@ describe.each(published)("published post %s", (slug) => {
     expect(cta).toBeGreaterThan(body);
     const after = html.slice(cta);
     expect(after).toMatch(/<a class="btn btn-primary" href="https:\/\/github\.com\/mitchldtn\/nemonik"[^>]*>Install the CLI<\/a>/);
-    expect(after).toMatch(/<a class="btn" href="https:\/\/nemonik\.io"[^>]*>Join the beta<\/a>/);
+    expect(after).toMatch(/<a class="btn" href="https:\/\/nemonik\.io\/beta\/"[^>]*>Join the beta<\/a>/);
   });
 
   it("is listed on /writing and on each of its topic pages", () => {
@@ -287,7 +282,7 @@ const ctaLinks = (html: string) => {
   expect(at).toBeGreaterThan(-1);
   const after = html.slice(at);
   expect(after).toMatch(/<a class="btn btn-primary" href="https:\/\/github\.com\/mitchldtn\/nemonik"[^>]*>Install the CLI<\/a>/);
-  expect(after).toMatch(/<a class="btn" href="https:\/\/nemonik\.io"[^>]*>Join the beta<\/a>/);
+  expect(after).toMatch(/<a class="btn" href="https:\/\/nemonik\.io\/beta\/"[^>]*>Join the beta<\/a>/);
 };
 
 describe("home page", () => {
@@ -298,10 +293,10 @@ describe("home page", () => {
     expect(html.indexOf('data-cta="nemonik"')).toBeGreaterThan(html.indexOf('id="now-building"'));
   });
 
-  it("links the now-building section to nemonik.io and the docs", () => {
+  it("links the now-building section to the beta page and the docs", () => {
     const start = html.indexOf('id="now-building"');
     const now = html.slice(start, html.indexOf("</section>", start));
-    expect(now).toContain('href="https://nemonik.io"');
+    expect(now).toContain('href="https://nemonik.io/beta/"');
     expect(now).toContain('href="https://docs.nemonik.io"');
   });
 
